@@ -1,1 +1,1 @@
-"use strict";var elem=document.querySelector(".carousel"),flkty=new Flickity(elem,{cellAlign:"left",contain:!0});flkty=new Flickity(".carousel",{});
+"use strict";var elem=document.querySelector(".carousel"),flkty=new Flickity(elem,{cellAlign:"left",contain:!0}),restartButton=document.querySelector(".button");restartButton.addEventListener("click",function(e){console.log("++++"),flkty.reloadCells()});var progressBar=document.querySelector(".progress-bar");flkty.on("scroll",function(e){e=Math.max(0,Math.min(1,e)),progressBar.style.width=100*e+"%"});
