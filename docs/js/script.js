@@ -1,0 +1,1 @@
+"use strict";var elem=document.querySelector(".carousel"),flkty=new Flickity(elem,{cellAlign:"left",contain:!0});flkty=new Flickity(".carousel",{});

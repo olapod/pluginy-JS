@@ -2,7 +2,6 @@
   width: 100%;
   /* full width */
   height: 50%;
-  /* height of carousel */
   min-height: 250px;
   margin-right: 10px;
   background-size: cover;
@@ -10,8 +9,19 @@
 
 .container {
   max-width: 1200px;
-  align-self: center;
-  display: flex;
+  margin: 0 auto;
+  display: table;
+}
+
+button {
+  background-color: brown;
+  position: absolute;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #333;
 }
 
 /*# sourceMappingURL=style.css.map */
