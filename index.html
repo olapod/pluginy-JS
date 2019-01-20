@@ -31,41 +31,56 @@
                             image: 'https://images.unsplash.com/photo-1547190795-ec5dfd84225a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80', 
                             title: 'Slajd nr 1',
                             description: '<p>Lorem ipsum. Dolor sit.</p>',
-                            id: 'carousel-cell1'
+                            id: 'carousel-cell1',
+                            coords: {lat: 49.821674, lng: 19.050735},
+                            place: 'Bielsko-Biala',
                         },
                         {
                             image: 'https://images.unsplash.com/photo-1547193700-645c2cb76a0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 
                             title: 'Slajd nr 2',
                             description: '<p>Lorem ipsum. Dolor sit.</p>',
-                            id: 'carousel-cell2'
+                            id: 'carousel-cell2',
+                            coords: {lat: 49.715486, lng: 19.017482},
+                            place: 'Szczyrk',
                         },
                         {
                             image: 'https://images.unsplash.com/photo-1546451182-c6a1524a1a36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80', 
                             title: 'Slajd nr 3',
                             description: '<p>Lorem ipsum. Dolor sit.</p>',
-                            id: 'carousel-cell3'
+                            id: 'carousel-cell3',
+                            coords: {lat: 49.855192, lng: 19.342397},
+                            place: 'Andrychow',
                         },
                         {
                             image: 'https://images.unsplash.com/photo-1547149588-f73af2f0dd42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80', 
                             title: 'Slajd nr 4',
                             description: '<p>Lorem ipsum. Dolor sit.</p>',
-                            id: 'carousel-cell4'
+                            id: 'carousel-cell4',
+                            coords: {lat: 49.686051, lng: 19.209915},
+                            place: 'Zywiec',
                         },
                         {
                             image: 'https://images.unsplash.com/photo-1547191516-45e9e58822db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 
                             title: 'Slajd nr 5',
                             description: '<p>Lorem ipsum. Dolor sit.</p>',
-                            id: 'carousel-cell5'
+                            id: 'carousel-cell5',
+                            coords: {lat: 49.913805, lng: 19.000165},
+                            place: 'Czechowice-Dziedzice',
                         }
                     ];
-                </script>           
+                </script>      
+                    
             </div>
             <div class="progress-bar"></div>
-            <button class="button">restart</button>
+            <button class="button">restart</button> 
+            <h3>My Google Maps Demo</h3>
+            <p id="infos"></p>
+            <div id="map"></div>
             <script src="./vendor/flickity.pkgd.min.js"></script>
             <script src="./vendor/hash.js"></script>
             <script src="./vendor/mustache.js"></script>
             <script src="./js/script.js"></script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUTPydGAimC-c88u_WQ1kCTegpHY52eM&callback=initMap"></script>
         </body>
 
 </html>

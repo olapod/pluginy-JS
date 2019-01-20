@@ -1,5 +1,7 @@
 'use strict';
 
+//AIzaSyD9mCYzSUj8KNc4qSX6l_ulinviEwPnLnc
+
 //łączę zmienną z szablonem oraz zaznaczam miejsce, gdzie szablon ma zostać wklejony
 
 var templateOneSlide = document.getElementById('template-one-slide').innerHTML;
@@ -50,5 +52,25 @@ flkty.on( 'scroll', function( progress ) {
   progressBar.style.width = progress * 100 + '%';
 });
 
+//Mapa google
+var infos = document.getElementById('infos');
 
+window.initMap = function() {
+	// The location of Uluru
+	var uluru = {lat: 49.821674, lng: 19.050735};
+	// The map, centered at Uluru
+	var map = new google.maps.Map(
+		document.getElementById('map'), {
+			zoom: 9, 
+			center: uluru
+		});
 	
+	for (var i = 0; i < slidesData.length; i++) {  
+	var marker = new google.maps.Marker({
+		position: (slidesData[i].coords),
+		map: map	
+		});
+	}
+}
+
+
