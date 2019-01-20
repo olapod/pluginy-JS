@@ -2,6 +2,7 @@
 
 
 var templateOneSlide = document.getElementById('template-one-slide').innerHTML;
+var carouselPlace = document.getElementById('carousel');
 
  Mustache.parse(templateOneSlide);
 	
@@ -23,12 +24,13 @@ var templateOneSlide = document.getElementById('template-one-slide').innerHTML;
 	}
 	
 	// Po wykonaniu pętli, zmienna listSlides zawiera już kod HTML dla wszystkich produktów. Teraz wykorzystamy szablon templateList, aby wstawić produkty do wrappera listy. 
+	console.log(listSlides)
+
 	
-	var fullSlidesList = Mustache.render(templateSlideList, {slides: listSlides});
 	
 	// I w pełni wyrenderowaną listę wyświetlimy na stronie: 
 	
-	results.insertAdjacentHTML('beforeend', fullSlidesList);
+	carouselPlace.insertAdjacentHTML('beforeend', listSlides);
 
 var elem = document.querySelector('.carousel');
 var flkty = new Flickity( elem, {

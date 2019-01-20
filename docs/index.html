@@ -1,27 +1,32 @@
-<!doctypehtml><meta charset="UTF-8"><link rel="stylesheet"type="text/css"href="vendor/normalize.css"><link rel="stylesheet"href="vendor/flickity.min.css"><link rel="stylesheet"type="text/css"href="css/style.css"><title>Zadanie: 14.1. Korzystanie z pluginów JS</title><p>View: <a href="#carousel-cell1">Cell 1</a> <a href="#carousel-cell2">Cell 2</a> <a href="#carousel-cell3">Cell 3</a> <a href="#carousel-cell4">Cell 4</a> <a href="#carousel-cell5">Cell 5</a><div class="carousel"data-flickity='{ "pageDots": false, "hash": true }'><div class="container"><h3>{{title}}</h3><p>{{{ description}}}</div></div><div class="container"><h3>{{title}}</h3><p>{{{ description}}}</div><div class="container"><h3>{{title}}</h3><p>{{{ description}}}</div><div class="container"><h3>{{title}}</h3><p>{{{ description}}}</div><div class="container">przykładowy tekst5<h3>{{title}}</h3><p>{{{ description}}}</div><div class="progress-bar"></div><button class="button">restart</button><script id="template-slides-list"type="x-tmpl-mustache"></script><script>var productsData = [
-	        {
-		        image: 'url(https://images.unsplash.com/photo-1547190795-ec5dfd84225a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80', 
-		        title: 'Slajd nr 1',
-		        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-	        },
-	        {
-		        image: 'url(https://images.unsplash.com/photo-1547193700-645c2cb76a0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)', 
-		        title: 'Slajd nr 2',
-		        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-            },
-            {
-		        image: 'url(https://images.unsplash.com/photo-1546451182-c6a1524a1a36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80)', 
-		        title: 'Slajd nr 3',
-		        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-            },
-            {
-		        image: 'url(https://images.unsplash.com/photo-1547149588-f73af2f0dd42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80)', 
-		        title: 'Slajd nr 4',
-		        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-            },
-            {
-		        image: 'url(https://images.unsplash.com/photo-1547191516-45e9e58822db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)', 
-		        title: 'Slajd nr 5',
-		        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-	        }
-        ];</script><script src="./vendor/flickity.pkgd.min.js"></script><script src="./vendor/hash.js"></script><script src="./js/script.js"></script>
+<!doctypehtml><meta charset="UTF-8"><link rel="stylesheet"type="text/css"href="vendor/normalize.css"><link rel="stylesheet"href="vendor/flickity.min.css"><link rel="stylesheet"type="text/css"href="css/style.css"><title>Zadanie: 14.1. Korzystanie z pluginów JS</title><p>View: <a href="#carousel-cell1">Cell 1</a> <a href="#carousel-cell2">Cell 2</a> <a href="#carousel-cell3">Cell 3</a> <a href="#carousel-cell4">Cell 4</a> <a href="#carousel-cell5">Cell 5</a><div class="carousel"data-flickity='{ "pageDots": false, "hash": true }'id="carousel"></div><div class="progress-bar"></div><button class="button">restart</button><script src="./vendor/flickity.pkgd.min.js"></script><script src="./vendor/hash.js"></script><script id="template-one-slide"type="x-tmpl-mustache"><div class="carousel-cell"    
+                    <div class="container">
+                        <h3> {{title}} </h3><br>
+                        {{{ description}}} 
+                    </div>
+                </div></script><script>var slidesData = [
+                    {
+                        image: 'url(https://images.unsplash.com/photo-1547190795-ec5dfd84225a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80', 
+                        title: 'Slajd nr 1',
+                        description: '<p>Lorem ipsum.</p> <img src="url(https://images.unsplash.com/photo-1547190795-ec5dfd84225a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                    },
+                    {
+                        image: 'url(https://images.unsplash.com/photo-1547193700-645c2cb76a0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)', 
+                        title: 'Slajd nr 2',
+                        description: '<p>Lorem ipsum.</p> <img src="url(https://images.unsplash.com/photo-1547193700-645c2cb76a0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)"> <p>Dolor sit.</p>'
+                    },
+                    {
+                        image: 'url(https://images.unsplash.com/photo-1546451182-c6a1524a1a36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80)', 
+                        title: 'Slajd nr 3',
+                        description: '<p>Lorem ipsum.</p> <img src="url(https://images.unsplash.com/photo-1546451182-c6a1524a1a36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80)" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                    },
+                    {
+                        image: 'url(https://images.unsplash.com/photo-1547149588-f73af2f0dd42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80)', 
+                        title: 'Slajd nr 4',
+                        description: '<p>Lorem ipsum.</p> <img src="url(https://images.unsplash.com/photo-1547149588-f73af2f0dd42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80)"> <p>Dolor sit.</p>'
+                    },
+                    {
+                        image: 'url(https://images.unsplash.com/photo-1547191516-45e9e58822db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)', 
+                        title: 'Slajd nr 5',
+                        description: '<p>Lorem ipsum.</p> <img src="url(https://images.unsplash.com/photo-1547191516-45e9e58822db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)"> <p>Dolor sit.</p>'
+                    }
+                ];</script><script src="./js/script.js"></script>
