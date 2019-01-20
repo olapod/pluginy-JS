@@ -64,13 +64,33 @@ window.initMap = function() {
 			zoom: 9, 
 			center: uluru
 		});
+	var markers = [];
+	var infoWindows = [];
 	
 	for (var i = 0; i < slidesData.length; i++) {  
 	var marker = new google.maps.Marker({
 		position: (slidesData[i].coords),
 		map: map	
 		});
+	
+	markers.push (slidesData[i].coords);
+	infoWindows.push (slidesData[i].place);
+	
+	
+
+	marker.addListener('click', function(){
+		flkty.select(i);;
+		});	
 	}
+// google.maps.event.addListener(markers[key], 'click', function(innerKey) {
+// 		return function() {
+// 			infoWindows[innerKey].open(map, markers[innerKey]);
+// 		}
+// 	  }(key));	
 }
 
 
+flkty.on( 'change', function( index ) {
+	
+	
+});
