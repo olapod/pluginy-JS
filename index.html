@@ -18,7 +18,7 @@
             </p>    
             <div class="carousel"  data-flickity='{ "pageDots": false, "hash": true }' id="carousel">
                 <script id="template-one-slide" type="x-tmpl-mustache">
-                    <div class="carousel-cell">    
+                    <div class="carousel-cell" id="{{id}}" style="background-image: url({{image}});">    
                         <div class="container">
                             <h3> {{title}} </h3><br>
                             {{{ description}}} 
@@ -28,29 +28,34 @@
                 <script>
                         var slidesData = [
                         {
-                            image: 'url(https://images.unsplash.com/photo-1547190795-ec5dfd84225a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80', 
+                            image: 'https://images.unsplash.com/photo-1547190795-ec5dfd84225a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80', 
                             title: 'Slajd nr 1',
-                            description: '<p>Lorem ipsum.</p><img src="https://images.unsplash.com/photo-1547190795-ec5dfd84225a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                            description: '<p>Lorem ipsum. Dolor sit.</p>',
+                            id: 'carousel-cell1'
                         },
                         {
-                            image: 'url(https://images.unsplash.com/photo-1547193700-645c2cb76a0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)', 
+                            image: 'https://images.unsplash.com/photo-1547193700-645c2cb76a0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 
                             title: 'Slajd nr 2',
-                            description: '<p>Lorem ipsum.</p><img src="https://images.unsplash.com/photo-1547193700-645c2cb76a0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"> <p>Dolor sit.</p>'
+                            description: '<p>Lorem ipsum. Dolor sit.</p>',
+                            id: 'carousel-cell2'
                         },
                         {
                             image: 'https://images.unsplash.com/photo-1546451182-c6a1524a1a36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80', 
                             title: 'Slajd nr 3',
-                            description: '<p>Lorem ipsum.</p><img src="https://images.unsplash.com/photo-1546451182-c6a1524a1a36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                            description: '<p>Lorem ipsum. Dolor sit.</p>',
+                            id: 'carousel-cell3'
                         },
                         {
                             image: 'https://images.unsplash.com/photo-1547149588-f73af2f0dd42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80', 
                             title: 'Slajd nr 4',
-                            description: '<p>Lorem ipsum.</p><img src="https://images.unsplash.com/photo-1547149588-f73af2f0dd42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"> <p>Dolor sit.</p>'
+                            description: '<p>Lorem ipsum. Dolor sit.</p>',
+                            id: 'carousel-cell4'
                         },
                         {
-                            image: 'url(https://images.unsplash.com/photo-1547191516-45e9e58822db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)', 
+                            image: 'https://images.unsplash.com/photo-1547191516-45e9e58822db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 
                             title: 'Slajd nr 5',
-                            description: '<p>Lorem ipsum.</p><img src="https://images.unsplash.com/photo-1547191516-45e9e58822db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"> <p>Dolor sit.</p>'
+                            description: '<p>Lorem ipsum. Dolor sit.</p>',
+                            id: 'carousel-cell5'
                         }
                     ];
                 </script>           

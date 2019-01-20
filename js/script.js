@@ -1,36 +1,28 @@
 'use strict';
 
+//łączę zmienną z szablonem oraz zaznaczam miejsce, gdzie szablon ma zostać wklejony
 
 var templateOneSlide = document.getElementById('template-one-slide').innerHTML;
 var carouselPlace = document.getElementById('carousel');
 
  Mustache.parse(templateOneSlide);
 	
-	// Teraz stworzymy zmienną, w której chcemy mieć kod HTML wszystkich produktów. 
+// tworzę zmienną, w której będę przechowywać dane wszystkich slajdów 
 	
-	var listSlides = '';
+var listSlides = '';
+//Tworzę pętle łądującą dane wszystkich slajdów do listy powstałej z szablonu
 	
-	/* Czas napisać pętlę, która dla każdego elementu z listy:
-	1. wygeneruje kod HTML dla danego produktu, oraz
-	2. doda ten wygenrowany kod HTML do zmiennej listItems. 
+for(var i = 0; i < slidesData.length; i++){
 	
-	Uwaga - zmienna slidesData, której używamy poniżej, została zdefiniowana w kodzie HTML!
-	*/
-	
-	for(var i = 0; i < slidesData.length; i++){
-		
-    listSlides += Mustache.render(templateOneSlide, slidesData[i]);
+listSlides += Mustache.render(templateOneSlide, slidesData[i]);
     
 	}
+		
+// I w pełni wyrenderowaną listę z danymi slajdów wyświetam na stronie: 
 	
-	// Po wykonaniu pętli, zmienna listSlides zawiera już kod HTML dla wszystkich produktów. Teraz wykorzystamy szablon templateList, aby wstawić produkty do wrappera listy. 
-	console.log(listSlides)
+carouselPlace.insertAdjacentHTML('beforeend', listSlides);
 
-	
-	
-	// I w pełni wyrenderowaną listę wyświetlimy na stronie: 
-	
-	carouselPlace.insertAdjacentHTML('beforeend', listSlides);
+//Konfiguruję plugin karuzeli
 
 var elem = document.querySelector('.carousel');
 var flkty = new Flickity( elem, {
