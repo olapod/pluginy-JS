@@ -1,6 +1,5 @@
 'use strict';
 
-//AIzaSyD9mCYzSUj8KNc4qSX6l_ulinviEwPnLnc
 
 //łączę zmienną z szablonem oraz zaznaczam miejsce, gdzie szablon ma zostać wklejony
 
@@ -53,44 +52,72 @@ flkty.on( 'scroll', function( progress ) {
 });
 
 //Mapa google
-var infos = document.getElementById('infos');
+
+var markers = [];
+var infoWindows = [];
+
+//Inicjowanie mamy Google
 
 window.initMap = function() {
-	// The location of Uluru
+	
 	var uluru = {lat: 49.821674, lng: 19.050735};
-	// The map, centered at Uluru
+	
 	var map = new google.maps.Map(
 		document.getElementById('map'), {
 			zoom: 9, 
 			center: uluru
 		});
-	var markers = [];
-	var infoWindows = [];
-	
-	for (var i = 0; i < slidesData.length; i++) {  
-	var marker = new google.maps.Marker({
-		position: (slidesData[i].coords),
-		map: map	
-		});
-	
-	markers.push (slidesData[i].coords);
-	infoWindows.push (slidesData[i].place);
-	
-	
+//Oznaczenie markerów z użyciem pętli
 
-	marker.addListener('click', function(){
-		flkty.select(i);;
-		});	
-	}
-// google.maps.event.addListener(markers[key], 'click', function(innerKey) {
-// 		return function() {
-// 			infoWindows[innerKey].open(map, markers[innerKey]);
-// 		}
-// 	  }(key));	
+	for (var i = 0; i < slidesData.length; i++) { 
+		
+		var marker = new google.maps.Marker({
+			position: (slidesData[i].coords),
+			map: map	
+		});
+			
+		markers.push (slidesData[i].coords);
+		infoWindows.push (slidesData[i].place);
+
+//Podłączenie informacji o markerach na mapie oraz połączenie markerów ze slajdami
+
+		var placeInfo = slidesData[i].place;
+				
+		var infowindow = new google.maps.InfoWindow();
+
+		google.maps.event.addListener(marker,'click', (function(marker,placeInfo,infowindow,i){ 
+			return function() {
+				infowindow.setContent(placeInfo);
+				infowindow.open(map,marker);
+				flkty.select(i);
+			};
+
+		})(marker,placeInfo,infowindow,i)); 
+	
+	};
+		 
+//Centrowanie mapy w zależności od wybranego slajdu
+
+	flkty.on( 'change', function( index ) {
+		
+		if (index == 0) {
+			map.panTo(markers[0]);
+		};
+		if (index == 1) {
+			map.panTo(markers[1]);
+		};
+		if (index == 2) {
+			map.panTo(markers[2]);
+		};
+		if (index == 3) {
+			map.panTo(markers[3]);
+		};
+		if (index == 4) {
+			map.panTo(markers[4]);
+		};
+	});
+
 }
 
 
-flkty.on( 'change', function( index ) {
-	
-	
-});
+
